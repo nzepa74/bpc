@@ -10,7 +10,7 @@
     <div class="sidebar-wrapper active">
         <div class="sidebar-header">
             <img src="<c:url value='/resources/assets/voler/images/logo.png' />" alt="" srcset="">
-            <span class="text-muted">Dashboard</span>
+            <%--            <span class="text-muted">Dashboard</span>--%>
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
@@ -68,7 +68,7 @@
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
-        <div style="background: #e8f3ff; padding: 10px; bottom: 0;width: 260px; border-top: solid 2px #28a745;
+        <div style="background: #28a745; padding: 10px; bottom: 0;width: 260px; border-top: solid 2px #fdac42;
                 clear: both;display: block; position: fixed;">
             <div class="row">
                 <div class="col-md-3 d-flex align-items-center justify-content-center" title="My Profile">
