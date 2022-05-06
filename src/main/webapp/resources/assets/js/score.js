@@ -80,7 +80,7 @@ score = (function () {
                     },
                 },
                 labels: year,
-                colors: ["#47aef3"],
+                colors: ["#28a745"],
                 legend: {
                     show: false,
                 },
