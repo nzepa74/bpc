@@ -59,7 +59,7 @@
                         <div class="table-responsive">
                             <h6 class='justify-content-center'>Target wise score for the year 2022</h6>
                             <table id="scoreTableId" class="table table-bordered">
-                                <thead class="bg-grey">
+                                <thead style="background: #28a745; color: #fff">
                                 <tr>
                                     <th>Sl. No</th>
                                     <th>Perspective</th>
