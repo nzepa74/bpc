@@ -279,7 +279,7 @@
                                                      data-bs-toggle="collapse"
                                                      data-bs-target="#collapseFour" aria-expanded="false"
                                                      aria-controls="collapseFour" role="button">
-                                                    <strong>Mobile Number : </strong>
+                                                    <strong>Mobile Number: </strong>
                                                     <span class="collapsed  collapse-title mobileNoDisplay"></span>
                                                     <button type="button"
                                                             class="btn btn-info btn-s square cursor-pointer pull-right ">
