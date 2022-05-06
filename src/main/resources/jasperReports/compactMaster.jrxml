@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2022-05-05T12:16:49 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="compact" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c8f2884a-0e34-4b8b-a1a0-9eb95c2a87da">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="connect-db"/>
+	<parameter name="year" class="java.lang.String"/>
+	<parameter name="companyId" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from sa_role]]>
+	</queryString>
+	<field name="roleId" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="roleName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="119"/>
+	</title>
+	<detail>
+		<band height="50">
+			<textField>
+				<reportElement x="130" y="13" width="100" height="30" uuid="4ce3512d-671f-4a66-8f06-e29e944b7ac1"/>
+				<textFieldExpression><![CDATA[$F{roleName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="13" width="100" height="30" uuid="377b7d57-3093-4b8b-b5a8-2405741d0914"/>
+				<text><![CDATA[roleName]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="155" splitType="Stretch"/>
+	</summary>
+</jasperReport>

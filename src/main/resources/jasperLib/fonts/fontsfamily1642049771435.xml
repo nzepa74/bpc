@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+  <fontFamily name="Candara">
+    <normal>fonts/Candara/Candara.ttf</normal>
+    <bold>fonts/Candara/Candara_Bold.ttf</bold>
+    <italic>fonts/Candara/Candara_Italic.ttf</italic>
+    <boldItalic>fonts/Candara/Candara_Bold_Italic.ttf</boldItalic>
+    <pdfEncoding>Identity-H</pdfEncoding>
+    <pdfEmbedded>true</pdfEmbedded>
+    <exportFonts>
+      <export key="html">html</export>
+      <export key="rtf">rtf</export>
+      <export key="xhtml">xhtml</export>
+    </exportFonts>
+  </fontFamily>
+
+</fontFamilies>
