@@ -68,7 +68,6 @@
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
-
         <div style="background: #e8f3ff; padding: 10px; bottom: 0;width: 260px; border-top: solid 2px #28a745;
                 clear: both;display: block; position: fixed;">
             <div class="row">
