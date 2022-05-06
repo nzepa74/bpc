@@ -14,7 +14,7 @@ public class SchedulerJob {
 //        sendSchedulerMail();
     }
     private void deleteJunkJasperReports() {
-        String filepath = "D:\\development\\src\\main\\webapp\\reports";
+        String filepath = "D:\\projects\\bpc\\compact\\src\\main\\reports";
         File file = new File(filepath);
         DeleteDirectory.deleteJunkJasperReports(file);
     }
