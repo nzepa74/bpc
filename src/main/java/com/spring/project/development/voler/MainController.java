@@ -643,6 +643,12 @@ public class MainController {
         return "compactDoc";
     }
 
+    @RequestMapping("/accessDenied")
+    @PreAuthorize("isAuthenticated()")
+    public String accessDeniedErrorMsg(Model model) {
+        return "403";
+    }
+
     private String getShortName(String fullName) {
         String firstLetter = fullName.substring(0, 1);
         String lastLetter;

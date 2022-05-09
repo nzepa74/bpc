@@ -27,7 +27,6 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
     }
 
     // API
-
     @Override
     public void onAuthenticationSuccess(final HttpServletRequest request, final HttpServletResponse response, final Authentication authentication) throws IOException {
         handle(request, response, authentication);
@@ -35,15 +34,12 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
     }
 
     // IMPL
-
     protected void handle(final HttpServletRequest request, final HttpServletResponse response, final Authentication authentication) throws IOException {
         final String targetUrl = determineTargetUrl(authentication);
-
         if (response.isCommitted()) {
             logger.debug("Response has already been committed. Unable to redirect to " + targetUrl);
             return;
         }
-
         redirectStrategy.sendRedirect(request, response, targetUrl);
     }
 
@@ -75,8 +71,6 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
         if (session == null) {
             return;
         }
-
         session.removeAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
     }
-
 }

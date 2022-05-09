@@ -1,10 +1,11 @@
 package com.spring.project.development.config;
- public class TestDecryption {
+
+public class TestDecryption {
 
     public static void main(String[] args) {
         EncryptDecryptDataSource encryptDecryptDataSource = new EncryptDecryptDataSource();
 
-        String plainText = "zepa";
+        String plainText = "your text here";
         String encrypted = encryptDecryptDataSource.getEncryptedText(plainText);
         String decrypted = encryptDecryptDataSource.getDecryptedText(encrypted);
 

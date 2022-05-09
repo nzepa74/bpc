@@ -46,8 +46,11 @@ import java.util.Properties;
 @EnableTransactionManagement
 @EnableJpaRepositories("com.spring.project.development")
 public class DatabaseConfig {
-    @Autowired
-    private Environment env;
+    private final Environment env;
+
+    public DatabaseConfig(Environment env) {
+        this.env = env;
+    }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {

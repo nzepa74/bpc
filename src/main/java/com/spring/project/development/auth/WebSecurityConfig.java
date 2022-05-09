@@ -1,6 +1,7 @@
 package com.spring.project.development.auth;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,8 +25,15 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 @EnableGlobalMethodSecurity(securedEnabled = true, proxyTargetClass = true)
 @RequiredArgsConstructor
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    private AccessDeniedHandler accessDeniedHandler;
 
     private final UserDetailsService userDetailsService;
+
+    @Autowired
+    public WebSecurityConfig(AccessDeniedHandler accessDeniedHandler, UserDetailsService userDetailsService) {
+        this.accessDeniedHandler = accessDeniedHandler;
+        this.userDetailsService = userDetailsService;
+    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -59,6 +67,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/login?logout")
                 .permitAll();
+        http.exceptionHandling()
+                .accessDeniedHandler(accessDeniedHandler);
     }
 
     @Bean
