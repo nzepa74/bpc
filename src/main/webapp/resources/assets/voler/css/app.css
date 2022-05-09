@@ -889,7 +889,11 @@ footer {
 }
 
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
-    background-color: #5bfc4b
+    background-color: #5bfc4b;
+}
+
+.submenu .submenu-item.active .submenu-link {
+    background-color: #d1f9cd;
 }
 
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link:before {

@@ -14,7 +14,7 @@
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-item active">
+                <li class="sidebar-item">
                     <a href="<c:url value='/' />" class='sidebar-link'>
                         <i class="fa fa-dashboard" width="20"></i>
                         Dashboard
@@ -25,25 +25,29 @@
                         <i class="fa fa-database" width="20"></i> Master Data
                     </a>
                     <ul class="submenu" style="padding-left:0px !important;">
-                        <li>
-                            <a href="<c:url value='/year' />"><i class="fa fa-calendar"></i> Year</a>
+                        <li class="submenu-item">
+                            <a href="<c:url value='/year' />" class='submenu-link'><i class="fa fa-calendar"></i>
+                                Year</a>
                         </li>
-                        <li>
-                            <a href="<c:url value='/user' />"><i class="fa fa-users"></i> User</a>
+                        <li class="submenu-item">
+                            <a href="<c:url value='/user' />" class='submenu-link'><i class="fa fa-users"></i> User</a>
                         </li>
-                        <li>
-                            <a href="<c:url value='/permission' />"><i class="fa fa-eye"></i> Permission</a>
+                        <li class="submenu-item">
+                            <a href="<c:url value='/permission' />" class='submenu-link'><i class="fa fa-eye"></i>
+                                Permission</a>
                         </li>
-                        <li>
-                            <a href="<c:url value='/company' />"><i class="fa fa-university"></i> Company</a>
+                        <li class="submenu-item">
+                            <a href="<c:url value='/company' />" class='submenu-link'><i class="fa fa-university"></i>
+                                Company</a>
                         </li>
-                        <li>
-                            <a href="<c:url value='/weightageSetup' />"><i class="fa fa-check"></i> Weightage
-                                Setup
+                        <li class="submenu-item">
+                            <a href="<c:url value='/weightageSetup' />" class='submenu-link'><i class="fa fa-check"></i>
+                                Weightage Setup
                             </a>
                         </li>
-                        <li>
-                            <a href="<c:url value='/weightageSetup' />"><i class="fa fa-file-text"></i>
+                        <li class="submenu-item">
+                            <a href="<c:url value='/commentPolicy' />" class='submenu-link'>
+                                <i class="fa fa-file-text"></i>
                                 Comment Policy
                             </a>
                         </li>

@@ -34,3 +34,4 @@
 
 <script type="text/javascript" src="<c:url value='/resources/assets/js/notification.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/resources/assets/js/score.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/js/activeMenu.js'/>"></script>
