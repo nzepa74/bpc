@@ -9,8 +9,10 @@
 <div id="sidebar" class='active'>
     <div class="sidebar-wrapper active">
         <div class="sidebar-header">
-            <img src="<c:url value='/resources/assets/voler/images/logo.png' />" alt="" srcset="">
-            <%--            <span class="text-muted">Dashboard</span>--%>
+            <a href="<c:url value='/' />" title="BPC Compact Management System">
+                <img src="<c:url value='/resources/assets/voler/images/logo.png' />" alt="" srcset="">
+            </a>
+            <span class="successMsg">Compact System</span>
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
