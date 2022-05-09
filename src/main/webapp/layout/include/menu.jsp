@@ -25,12 +25,14 @@
                         <i class="fa fa-database" width="20"></i> Master Data
                     </a>
                     <ul class="submenu" style="padding-left:0px !important;">
+                        <sec:authorize access="hasAuthority('1-VIEW')">
+                            <li class="submenu-item">
+                                <a href="<c:url value='/user' />" class='submenu-link'><i class="fa fa-users"></i> User</a>
+                            </li>
+                        </sec:authorize>
                         <li class="submenu-item">
                             <a href="<c:url value='/year' />" class='submenu-link'><i class="fa fa-calendar"></i>
                                 Year</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="<c:url value='/user' />" class='submenu-link'><i class="fa fa-users"></i> User</a>
                         </li>
                         <li class="submenu-item">
                             <a href="<c:url value='/permission' />" class='submenu-link'><i class="fa fa-eye"></i>

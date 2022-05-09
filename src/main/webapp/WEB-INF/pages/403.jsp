@@ -12,15 +12,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Not Found</title>
+    <title>403 - Forbidden</title>
     <link rel="shortcut icon" href="<c:url value='/resources/assets/voler/images/favicon.png' />"/>
 </head>
 <body>
 <div id="error">
     <div class="container text-center pt-32">
-        <h1 class='error-title errorMsg'>404</h1>
-        <h2>Oop! You just found an error page</h2>
-        <p>We couldn't find the page you are looking for</p>
+        <h1 class='error-title errorMsg'>403</h1>
+        <h2>Forbidden</h2>
+        <p>The page you are looking for is forbidden</p>
         <a href="<c:url value='/' />" class='btn btn-info square shake animated'>
             <i class="fa fa-arrow-left"></i> Go Home</a>
     </div>

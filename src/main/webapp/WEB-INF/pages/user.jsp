@@ -47,9 +47,12 @@
                 <div class="card">
                     <div class="card-header border-bottom d-flex justify-content-between align-items-center">
                         <h4 class="card-title">User List</h4>
-                        <button type="button" class="btn btn-primary square btn-s btnNewUser"
-                                data-bs-toggle="modal" data-bs-target="#userModal"><i class="fa fa-plus"></i>New User
-                        </button>
+                        <sec:authorize access="hasAuthority('1-ADD')">
+                            <button type="button" class="btn btn-primary square btn-s btnNewUser"
+                                    data-bs-toggle="modal" data-bs-target="#userModal"><i class="fa fa-plus"></i>
+                                New User
+                            </button>
+                        </sec:authorize>
                     </div>
 
                     <div class="card-content">

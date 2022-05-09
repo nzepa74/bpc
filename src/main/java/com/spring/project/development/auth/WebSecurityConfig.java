@@ -34,26 +34,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.httpBasic().disable();
         http
                 .csrf()
                 .disable()
                 .authorizeRequests()
+                .antMatchers("/user").access("hasAuthority('1-VIEW')")
+                .antMatchers("/year").access("hasAuthority('2-VIEW')")
                 .antMatchers("/assets/**", "/resources/**"
-//                        , "/"
                         , "/forgotPassword/**"
                         , "/api/forgotPassword/**"
                         , "/resetPassword/**"
                         , "/api/resetPassword/**"
                 ).permitAll()
-//                .antMatchers("/registration").access("hasRole('ROLE_ADMIN')")
                 .anyRequest().authenticated()
                 .and()
-//                .addFilter(null)
                 .formLogin()
                 .loginPage("/login")
-//                .successHandler(successHandler)
-//                .successHandler(myAuthenticationSuccessHandler())
                 .defaultSuccessUrl("/home", true)
                 .permitAll()
                 .and()
