@@ -76,15 +76,12 @@
                                     <div class="form-group">
                                         <label for="inputPassword" style="text-transform: none">Password</label>
                                         <input type="password" class="form-control square" id="inputPassword"
-                                               name="password"
-                                               required>
+                                               name="password" required>
                                         <div class="pull-left">
                                             <input type="checkbox" class='form-check-input cursor-pointer'
-                                                   id="checkbox1"
-                                                   onclick="showPasswordFn()">
-                                            <label for="checkbox1" class="cursor-pointer"> <small
-                                                    style="text-transform: capitalize;">Show
-                                                Password</small></label>
+                                                   id="checkbox1" onclick="showPasswordFn()">
+                                            <label for="checkbox1" class="cursor-pointer">
+                                                <small style="text-transform: none;">Show password</small></label>
                                         </div>
                                         <a href="<c:url value='/forgotPassword' />" class='pull-right'>
                                             <small style="color: red; text-decoration: underline">Forgot
