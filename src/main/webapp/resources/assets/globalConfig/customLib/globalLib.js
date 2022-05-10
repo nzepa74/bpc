@@ -67,15 +67,15 @@ function successMsg(msg, isDelete) {
         position: 'br',
         duration: 5000
     });
-    let audio = new Audio('assets/sounds/success/3.mp3');
+    let audio = new Audio('resources/assets/sounds/success/3.mp3');
     if (isDelete === true) {
-        audio = new Audio('assets/sounds/success/1.mp3');
+        audio = new Audio('resources/assets/sounds/success/1.mp3');
     }
     audio.play();
 }
 
 function warningMsg(msg) {
-    let audio = new Audio('assets/sounds/warning/3.mp3');
+    let audio = new Audio('resources/assets/sounds/warning/3.mp3');
     audio.play();
     tata.warn('<strong>' + 'Warning' + '</strong>', '<small>' + msg + '</small>', {
         animate: 'slide',
@@ -87,7 +87,7 @@ function warningMsg(msg) {
 }
 
 function msgInfo(msg) {
-    let audio = new Audio('assets/sounds/info/3.mp3');
+    let audio = new Audio('resources/assets/sounds/info/3.mp3');
     audio.play();
     tata.info('<strong>' + 'Info' + '</strong>', '<small>' + msg + '</small>', {
         animate: 'slide',
@@ -99,7 +99,7 @@ function msgInfo(msg) {
 }
 
 function errorMsg(msg) {
-    let audio = new Audio('assets/sounds/error/1.mp3');
+    let audio = new Audio('resources/assets/sounds/error/1.mp3');
     audio.play();
     tata.error('<strong>' + 'Error' + '</strong>', '<small>' + msg + '</small>', {
         animate: 'slide',
