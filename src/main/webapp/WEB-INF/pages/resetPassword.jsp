@@ -21,57 +21,70 @@
                         <div class="text-center mb-3">
                             <img src="<c:url value='/resources/assets/voler/images/logo.png' />" height="48"
                                  class='mb-3' alt="">
-                            <h3>BPC Compact Management System</h3>
-                            <h5>Reset Password</h5>
+                            <h5>BPC Compact Management System</h5>
+                            <h6>Reset Password</h6>
                         </div>
-                        <form id="resetPasswordForm" class="resetPasswordForm">
-                            <div class="form-group">
-                                <input type="hidden" name="email" class="form-control field" id="email"
-                                       value="${email}"/>
-                                <input type="hidden" name="requestId" class="form-control field"
-                                       id="requestId" value="${requestId}"/>
-                            </div>
 
-                            <div class="form-group">
-                                <input type="password" name="newPassword" class="form-control square"
-                                       id="newPassword" autocomplete="off" required placeholder="New Password"/>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="password" name="password" class="form-control square"
-                                       id="confirmPassword" autocomplete="off" required
-                                       placeholder="Confirm Password"/>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="checkbox" class='form-check-input cursor-pointer' id="checkbox1"
-                                           onclick="showPasswordFn()">
-                                    <label for="checkbox1" class="cursor-pointer"> <small
-                                            style="text-transform: capitalize;">Show Password</small></label>
+                        <c:if test="${pending}">
+                            <form id="resetPasswordForm" class="resetPasswordForm">
+                                <div class="form-group">
+                                    <input type="hidden" name="email" class="form-control field" id="email"
+                                           value="${email}"/>
+                                    <input type="hidden" name="requestId" class="form-control field"
+                                           id="requestId" value="${requestId}"/>
                                 </div>
-                                <div class="col-md-6">
-                                    <button type="button"
-                                            class="btn btn-primary btn-sm btn-block square btnResetNow">
-                                        Reset Now
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
 
-                        <div class="loginLinkDiv hidden">
-                            <div class="row">
-                                <div class="alert alert-success"
+                                <div class="form-group">
+                                    <input type="password" name="newPassword" class="form-control square"
+                                           id="newPassword" autocomplete="off" required placeholder="New Password"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="password" name="password" class="form-control square"
+                                           id="confirmPassword" autocomplete="off" required
+                                           placeholder="Confirm Password"/>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="checkbox" class='form-check-input cursor-pointer'
+                                               id="checkbox1"
+                                               onclick="showPasswordFn()">
+                                        <label for="checkbox1" class="cursor-pointer"> <small
+                                                style="text-transform: capitalize;">Show Password</small></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button"
+                                                class="btn btn-primary btn-sm btn-block square btnResetNow">
+                                            Reset Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="loginLinkDiv hidden">
+                                <div class="row">
+                                    <div class="alert alert-success"
+                                         style="text-align: center;vertical-align: middle;position: relative;">
+                                        <span class="displaySucessMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="row"
                                      style="text-align: center;vertical-align: middle;position: relative;">
-                                    <span class="displaySucessMsg"></span>
+                                    <a href="<c:url value='/login' />" class='pull-right'>
+                                        Please click <span style="text-decoration: underline">here</span> to login
+                                        with new password
+                                    </a>
                                 </div>
                             </div>
-                            <div class="row" style="text-align: center;vertical-align: middle;position: relative;">
-                                <a href="<c:url value='/login' />" class='pull-right'>
-                                    Please click <span style="text-decoration: underline">here</span> to login with new
-                                    password
-                                </a>
+                        </c:if>
+                        <c:if test="${changed}">
+                            <div class="alert alert-light-danger alert-dismissible fade show" role="alert">
+                                You have already changed password using this link.
                             </div>
-                        </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="<c:url value='/forgotPassword' />" target="_blank" class="pull-left">
+                                Click here to request new password reset link <i
+                                    class="fa fa-external-link"></i></a>
+                        </c:if>
                     </div>
                 </div>
             </div>

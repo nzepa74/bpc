@@ -148,6 +148,11 @@ public class MainController {
     public String resetPassword(String requestId, Model model) {
         RequestPasswordChange requestPasswordChange = requestPasswordChangeRepository.findByRequestId(requestId);
         if (requestPasswordChange != null) {
+            if (requestPasswordChange.getStatus() == 'P') {
+                model.addAttribute("pending", true);
+            } else {
+                model.addAttribute("changed", true);
+            }
             model.addAttribute("requestId", requestId);
             model.addAttribute("email", requestPasswordChange.getEmail());
             return "resetPassword";

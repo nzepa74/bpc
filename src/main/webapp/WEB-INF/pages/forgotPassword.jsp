@@ -21,8 +21,8 @@
                         <div class="text-center mb-3">
                             <img src="<c:url value='/resources/assets/voler/images/logo.png' />" height="48"
                                  class='mb-3' alt="">
-                            <h3>BPC Compact Management System</h3>
-                            <h5>Forgot Password</h5>
+                            <h5>BPC Compact Management System</h5>
+                            <h6>Forgot Password</h6>
                             <span>Please enter your email to receive password reset link.</span>
                         </div>
                         <form id="forgotPasswordForm" class="forgotPasswordForm">
