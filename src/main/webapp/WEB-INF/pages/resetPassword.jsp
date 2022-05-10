@@ -81,9 +81,10 @@
                                 You have already changed password using this link.
                             </div>
                             <div class="dropdown-divider"></div>
-                            <a href="<c:url value='/forgotPassword' />" target="_blank" class="pull-left">
-                                Click here to request new password reset link <i
-                                    class="fa fa-external-link"></i></a>
+                            <a href="<c:url value='/forgotPassword' />" target="_blank">
+                                Click here to request new password reset link
+                                <i class="fa fa-external-link shake animated"></i>
+                            </a>
                         </c:if>
                     </div>
                 </div>
