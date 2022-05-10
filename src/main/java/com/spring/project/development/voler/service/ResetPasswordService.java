@@ -55,13 +55,8 @@ public class ResetPasswordService {
         String requestId = requestPasswordChange.getRequestId();
         String requestUrl = domainName + "/resetPassword?requestId=" + requestId;
         String toAddress = requestPasswordChange.getEmail();
-        String subject = "DHI Group Management System Password Reset";
-        String message = "Sir/Madam, <br><br>" +
-                "Please click below link to change your password of DHI Group Management System:<br>" +
-                "<a href='" + requestUrl + "' target='_blank'>Click here</a><br><br>" +
-                "<br><br>Thank you<br>" +
-                "Have a good day.<br><br><br>" +
-                "<small>****** This is a system generated e-mail. Please do not reply ******</small>";
+        String subject = "BPC Compact Management System Password Reset";
+        String message = "Sir/Madam, <br><br>" + "Please click below link to change your password of BPC Compact Management System:<br>" + "<a href='" + requestUrl + "' target='_blank'>Click here</a><br><br>" + "<br><br>Thank you<br>" + "Have a good day.<br><br><br>" + "<small>****** This is a system generated e-mail. Please do not reply ******</small>";
         MailSender.sendMail(toAddress, null, null, message, subject);
     }
 
@@ -79,6 +74,11 @@ public class ResetPasswordService {
                 SaUser saUserDb = saUserRepository.findByUsername(resetPasswordDto.getEmail());
                 if (saUserDb == null) {
                     responseMessage.setText("Something went wrong. Please try again");
+                    responseMessage.setStatus(SystemDataInt.MESSAGE_STATUS_UNSUCCESSFUL.value());
+                    return responseMessage;
+                }
+                if (requestPasswordChange.getStatus() != 'P') {
+                    responseMessage.setText("You have already changed password using this link. Please request new link.");
                     responseMessage.setStatus(SystemDataInt.MESSAGE_STATUS_UNSUCCESSFUL.value());
                     return responseMessage;
                 }
