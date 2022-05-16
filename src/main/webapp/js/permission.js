@@ -103,7 +103,7 @@ permission = (function () {
                     }
                 });
 
-                let audio = new Audio('assets/sounds/info/1.mp3');
+                let audio = new Audio('resources/assets/sounds/info/1.mp3');
                 audio.play();
                 $.confirm({
                     title: 'Confirmation',

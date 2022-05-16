@@ -672,7 +672,7 @@ tfBcpmProdSaleEditTarget = (function () {
     function deleteFile() {
         $('.fileListDiv ul').on('click', 'li .deleteFile', function () {
             let fileId = $(this).closest('.fileUl .fileLi').find('.fileId').val();
-            let audio = new Audio('assets/sounds/info/1.mp3');
+            let audio = new Audio('resources/assets/sounds/info/1.mp3');
             audio.play();
             $.confirm({
                 title: 'Confirmation',
@@ -1039,7 +1039,7 @@ tfBcpmProdSaleEditTarget = (function () {
         $('.actionBtnReopen').on('click', function () {
             let targetId = $('#targetId').val();
 
-            let audio = new Audio('assets/sounds/info/1.mp3');
+            let audio = new Audio('resources/assets/sounds/info/1.mp3');
             audio.play();
             $.confirm({
                 title: 'Confirmation',
@@ -1174,7 +1174,7 @@ tfBcpmProdSaleEditTarget = (function () {
             let selectedRow = row.addClass('selected');
             let subTargetId = selectedRow.find(".subTargetId").val();
             if (subTargetId !== '' && typeof subTargetId !== 'undefined') {
-                let audio = new Audio('assets/sounds/info/1.mp3');
+                let audio = new Audio('resources/assets/sounds/info/1.mp3');
                 audio.play();
                 $.confirm({
                     title: 'Confirmation',
@@ -1230,7 +1230,7 @@ tfBcpmProdSaleEditTarget = (function () {
     function deleteTarget() {
         $('.actionBtnDelete').on('click', function () {
             let targetId = $('#targetId').val();
-            let audio = new Audio('assets/sounds/info/1.mp3');
+            let audio = new Audio('resources/assets/sounds/info/1.mp3');
             audio.play();
             $.confirm({
                 title: 'Confirmation',
