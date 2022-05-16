@@ -8,7 +8,6 @@ permission = (function () {
         return 'api/permission/';
     }
 
-
     function onChangeRole() {
         $('#roleId').on('change', function () {
             let roleId = $('#roleId').find('option:selected').val();
@@ -140,7 +139,6 @@ permission = (function () {
             }
         });
     }
-
 
     return {
         onChangeRole: onChangeRole,
