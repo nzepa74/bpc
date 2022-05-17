@@ -55,7 +55,7 @@ public class ResetPasswordService {
         String requestId = requestPasswordChange.getRequestId();
         String requestUrl = domainName + "/resetPassword?requestId=" + requestId;
         String toAddress = requestPasswordChange.getEmail();
-        String subject = "BPC Compact Management System Password Reset";
+        String subject = "BPC YYY Management System Password Reset";
         String message = "Sir/Madam, <br><br>" + "Please click below link to change your password of BPC Compact Management System:<br>" + "<a href='" + requestUrl + "' target='_blank'>Click here</a><br><br>" + "<br><br>Thank you<br>" + "Have a good day.<br><br><br>" + "<small>****** This is a system generated e-mail. Please do not reply ******</small>";
         MailSender.sendMail(toAddress, null, null, message, subject);
     }
