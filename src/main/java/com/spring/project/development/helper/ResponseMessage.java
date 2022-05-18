@@ -4,8 +4,8 @@ public class ResponseMessage {
     //region private declaration
     private Integer status;
     private String text;
-    private String targetAuditId;
     private Object dto;
+    private String targetAuditId;
     private Object writeupDto;
     //endregion
 

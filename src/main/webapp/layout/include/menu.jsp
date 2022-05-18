@@ -59,6 +59,12 @@
                                 Comment Policy
                             </a>
                         </li>
+                        <li class="submenu-item">
+                            <a href="<c:url value='/employee' />" class='submenu-link'>
+                                <i class="fa fa-user"></i>
+                                Employee
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class='sidebar-title'>General Dashboard</li>

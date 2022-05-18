@@ -41,6 +41,7 @@ import java.util.Properties;
         @PropertySource("classpath:dbscript/tfBcpmOrgMgtListDao.mssql.properties"),
         @PropertySource("classpath:dbscript/tfBcpmProdSaleEditTargetDao.mssql.properties"),
         @PropertySource("classpath:dbscript/tfBcpmProdSaleListDao.mssql.properties"),
+        @PropertySource("classpath:dbscript/employeeDao.mssql.properties"),
 
 })
 @EnableTransactionManagement

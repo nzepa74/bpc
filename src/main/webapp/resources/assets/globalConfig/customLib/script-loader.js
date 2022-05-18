@@ -130,6 +130,10 @@
         scriptLoader("js/compactDoc.js");
 
 
+    if (document.URL.search("employee") > 1)
+        scriptLoader("js/employee.js");
+
+
 });
 
 let scriptLoader = function (url) {

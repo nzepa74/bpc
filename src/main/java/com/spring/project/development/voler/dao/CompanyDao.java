@@ -32,9 +32,9 @@ public class CompanyDao extends BaseDao {
     @Transactional
     public List<CompanyDto> getCompanies() {
         String sql = environment.getProperty("CompanyDao.getCompanies");
-        List<CompanyDto> dropdownDTOS = entityManager.createNativeQuery(sql)
+        List<CompanyDto> companyDtoList = entityManager.createNativeQuery(sql)
                 .unwrap(SQLQuery.class).setResultTransformer(Transformers.aliasToBean(CompanyDto.class)).getResultList();
-        return dropdownDTOS;
+        return companyDtoList;
     }
 
     @Transactional

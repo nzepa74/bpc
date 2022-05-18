@@ -654,6 +654,16 @@ public class MainController {
         return "403";
     }
 
+    /**
+     * this is a controller method to load jsp to mr browser
+     * @param model
+     * @return
+     */
+    @RequestMapping("/employee")//this is url
+     public String employeeMethod(Model model) {
+        return "employee";//this is a name of jsp page
+    }
+
     private String getShortName(String fullName) {
         String firstLetter = fullName.substring(0, 1);
         String lastLetter;
