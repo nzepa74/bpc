@@ -9,6 +9,7 @@ import com.spring.project.development.voler.entity.sa.SaUser;
 import com.spring.project.development.voler.repository.EmployeeARepo;
 import com.spring.project.development.voler.repository.EmployeeRepo;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -24,6 +25,9 @@ public class EmployeeService {
     private final EmployeeRepo employeeRepo;
     private final EmployeeARepo employeeRepoA;
 
+    @Autowired
+    protected BeanValidator beanValidator;
+
     public EmployeeService(EmployeeDao employeeDao, EmployeeRepo employeeRepo, EmployeeARepo employeeRepoA) {
         this.employeeDao = employeeDao;
         this.employeeRepo = employeeRepo;
@@ -32,7 +36,10 @@ public class EmployeeService {
 
     public ResponseMessage addEmployee(CurrentUser currentUser, EmployeeDto employeeDto) {
         ResponseMessage responseMessage = new ResponseMessage();
-
+        beanValidator.Validate(employeeDto, responseMessage);
+        if (responseMessage.getStatus() == SystemDataInt.MESSAGE_STATUS_UNSUCCESSFUL.value()) {
+            return responseMessage;
+        }
         //all validations here
 
 

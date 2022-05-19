@@ -1,12 +1,9 @@
 package com.spring.project.development.voler.dto;
 
-import com.spring.project.development.helper.BaseEntity;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -18,6 +15,8 @@ public class EmployeeDto {
 
     private String employeeId;
 
+    @NotNull(message = "Full name is required.")
+    @Size(min = 1, max = 10, message = "Full name must contain maximum of 10 characters.")
     private String fullName;
 
     private Character gender;
