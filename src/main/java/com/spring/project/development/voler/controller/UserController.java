@@ -4,6 +4,7 @@ import com.spring.project.development.helper.CurrentUser;
 import com.spring.project.development.helper.ResponseMessage;
 import com.spring.project.development.voler.dto.SaUserDto;
 import com.spring.project.development.voler.service.UserService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,12 +23,15 @@ public class UserController {
         this.userService = userService;
     }
 
+
+    @PreAuthorize("hasAuthority('1-ADD')")
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public ResponseMessage addUser(HttpServletRequest request, SaUserDto saUserDto) throws Exception {
         CurrentUser currentUser = (CurrentUser) request.getSession().getAttribute("currentUser");
         return userService.addUser(currentUser, saUserDto);
     }
 
+    @PreAuthorize("hasAuthority('1-EDIT')")
     @RequestMapping(value = "/updateUser", method = RequestMethod.POST)
     public ResponseMessage updateUser(HttpServletRequest request, SaUserDto saUserDto) {
         CurrentUser currentUser = (CurrentUser) request.getSession().getAttribute("currentUser");

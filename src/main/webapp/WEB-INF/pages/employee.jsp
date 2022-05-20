@@ -95,6 +95,24 @@
 
                         <div class="row">
                             <div class="col-md-3">
+                                Dzo:
+                                <form:select class="form-control form-select square cursor-pointer chosen-select"
+                                             path="dzongList" id="dzongkhagId" required="required" name="dzongkhagId">
+                                    <form:option value="">--- Select ---</form:option>
+                                    <form:options items="${dzongList}" itemValue="valueInteger" itemLabel="text"/>
+                                </form:select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                Geog:
+                                <select class="form-control form-select square cursor-pointer" id="geogId"> </select>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
                                 <label for="employeeId"
                                        class="col-form-label required pull-right">Employee ID</label>
                             </div>

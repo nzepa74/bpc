@@ -123,8 +123,7 @@ public class EmployeeService {
         return responseMessage;
     }
 
-
-    //TODO:method 1: to insert to db
-
-    //TODO:method 2: to retrieve from db
+    public List<DropdownDTO> getGeogListByDzoId(String dzoId) {
+        return employeeDao.getGeogListByDzoId(dzoId);
+    }
 }

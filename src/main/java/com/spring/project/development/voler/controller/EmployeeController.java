@@ -1,6 +1,7 @@
 package com.spring.project.development.voler.controller;
 
 import com.spring.project.development.helper.CurrentUser;
+import com.spring.project.development.helper.DropdownDTO;
 import com.spring.project.development.helper.ResponseMessage;
 import com.spring.project.development.voler.dto.EmployeeDto;
 import com.spring.project.development.voler.service.EmployeeService;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created By zepaG on 5/18/2022.
@@ -37,12 +39,17 @@ public class EmployeeController {
 
     @RequestMapping(value = "/getAllEmployees", method = RequestMethod.GET)//api
     public ResponseMessage getAllEmployees() {
-         return employeeService.getAllEmployees();
+        return employeeService.getAllEmployees();
     }
 
     @RequestMapping(value = "/getEmployeeInfo", method = RequestMethod.GET)//api
     public ResponseMessage getEmployeeInfo(String employeeId) {
         return employeeService.getEmployeeInfo(employeeId);
+    }
+
+    @RequestMapping(value = "/getGeogListByDzoId", method = RequestMethod.GET)
+    public List<DropdownDTO> getGeogListByDzoId(String dzoId) {
+        return employeeService.getGeogListByDzoId(dzoId);
     }
 
 }

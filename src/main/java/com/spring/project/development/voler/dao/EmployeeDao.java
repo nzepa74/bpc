@@ -1,8 +1,11 @@
 package com.spring.project.development.voler.dao;
 
 import com.spring.project.development.helper.BaseDao;
+import com.spring.project.development.helper.DropdownDTO;
 import com.spring.project.development.voler.dto.EmployeeDto;
+import com.spring.project.development.voler.dto.EvaluationScoreDto;
 import org.hibernate.SQLQuery;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.transform.Transformers;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Repository;
@@ -28,5 +31,13 @@ public class EmployeeDao extends BaseDao {
         List<EmployeeDto> employeeDtos = entityManager.createNativeQuery(sql)
                 .unwrap(SQLQuery.class).setResultTransformer(Transformers.aliasToBean(EmployeeDto.class)).getResultList();
         return employeeDtos;
+    }
+
+    @Transactional
+    public List<DropdownDTO> getGeogListByDzoId(String dzoId) {
+        String sqlQuery = environment.getProperty("EmployeeDao.getGeogListByDzoId");
+        NativeQuery hQuery = (NativeQuery) hibernateQuery(sqlQuery, DropdownDTO.class)
+                .setParameter("dzongId", dzoId);
+        return hQuery.list().isEmpty() ? null : hQuery.list();
     }
 }

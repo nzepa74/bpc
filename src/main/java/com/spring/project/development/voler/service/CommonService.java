@@ -150,6 +150,7 @@ public class CommonService {
     public List<TfDhiOrgMgtTargetActivity> getOrgMgtTargetActivity() {
         return tfDhiOrgMgtTargetActivityRepository.findAll();
     }
+
     public List<TfDhiProdSaleTarget> getProdSaleTarget() {
         return tfDhiProdSaleTargetRepository.findAll();
     }
@@ -193,4 +194,9 @@ public class CommonService {
     public BigInteger isNewComment(CurrentUser currentUser) {
         return commonDao.isNewComment(currentUser.getUserId());
     }
+
+    public List<DropdownDTO> getDzongList() {
+        return commonDao.getDzongList();
+    }
+
 }

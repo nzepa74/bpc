@@ -61,11 +61,7 @@ function textAreaAdjust(element) {
 
 function successMsg(msg, isDelete) {
     tata.success('<strong>' + 'Success' + '</strong>', '<small>' + msg + '</small>', {
-        animate: 'slide',
-        progress: true,
-        holding: false,
-        position: 'br',
-        duration: 5000
+        animate: 'slide', progress: true, holding: false, position: 'br', duration: 5000
     });
     let audio = new Audio('resources/assets/sounds/success/3.mp3');
     if (isDelete === true) {
@@ -78,11 +74,7 @@ function warningMsg(msg) {
     let audio = new Audio('resources/assets/sounds/warning/3.mp3');
     audio.play();
     tata.warn('<strong>' + 'Warning' + '</strong>', '<small>' + msg + '</small>', {
-        animate: 'slide',
-        progress: true,
-        holding: false,
-        position: 'tr',
-        duration: 5000
+        animate: 'slide', progress: true, holding: false, position: 'tr', duration: 5000
     });
 }
 
@@ -90,11 +82,7 @@ function msgInfo(msg) {
     let audio = new Audio('resources/assets/sounds/info/3.mp3');
     audio.play();
     tata.info('<strong>' + 'Info' + '</strong>', '<small>' + msg + '</small>', {
-        animate: 'slide',
-        progress: true,
-        holding: false,
-        position: 'br',
-        duration: 5000
+        animate: 'slide', progress: true, holding: false, position: 'br', duration: 5000
     });
 }
 
@@ -102,40 +90,15 @@ function errorMsg(msg) {
     let audio = new Audio('resources/assets/sounds/error/1.mp3');
     audio.play();
     tata.error('<strong>' + 'Error' + '</strong>', '<small>' + msg + '</small>', {
-        animate: 'slide',
-        progress: true,
-        holding: false,
-        position: 'tr',
-        duration: 5000
+        animate: 'slide', progress: true, holding: false, position: 'tr', duration: 5000
     });
 }
 
 function editorConfig(placeHolderValue) {
     return {
-        bounds: "#full-container .editor",
-        modules: {
-            toolbar: [
-                [{font: []}, {size: []}],
-                ["bold", "italic", "underline", "strike"],
-                [
-                    {color: []},
-                    {background: []}
-                ],
-                [
-                    {script: "super"},
-                    {script: "sub"}
-                ],
-                [
-                    {list: "ordered"},
-                    {list: "bullet"},
-                    {indent: "-1"},
-                    {indent: "+1"}
-                ],
-                ["direction", {align: []}],
-                ["clean"]]
-        },
-        theme: "snow",
-        placeholder: placeHolderValue,
+        bounds: "#full-container .editor", modules: {
+            toolbar: [[{font: []}, {size: []}], ["bold", "italic", "underline", "strike"], [{color: []}, {background: []}], [{script: "super"}, {script: "sub"}], [{list: "ordered"}, {list: "bullet"}, {indent: "-1"}, {indent: "+1"}], ["direction", {align: []}], ["clean"]]
+        }, theme: "snow", placeholder: placeHolderValue,
     }
 }
 
@@ -167,68 +130,56 @@ function getShortName(fullName) {
 }
 
 function targetFormIndexing(tableBody, row, serialNo, iterator) {
-    if (!iterator)
-        iterator = 0;
+    if (!iterator) iterator = 0;
 
     for (let i = 0; i < row.length; i++) {
-        tableBody.children().eq(i).children().children().children().children().each(
-            function () {
-                if (this.name) {
-                    this.name = this.name.replace(
-                        /\[(\d+)\]/, function (str, p) {
-                            return '[' + (i + iterator) + ']';
-                        });
-                }
-
-                if ($(this).hasClass(serialNo)) {
-                    $(this).val(i + 1);
-                }
+        tableBody.children().eq(i).children().children().children().children().each(function () {
+            if (this.name) {
+                this.name = this.name.replace(/\[(\d+)\]/, function (str, p) {
+                    return '[' + (i + iterator) + ']';
+                });
             }
-        );
+
+            if ($(this).hasClass(serialNo)) {
+                $(this).val(i + 1);
+            }
+        });
     }
 }
 
 function targetFormIndexing2(tableBody, row, serialNo, iterator) {
-    if (!iterator)
-        iterator = 0;
+    if (!iterator) iterator = 0;
 
     for (let i = 0; i < row.length; i++) {
-        tableBody.children().eq(i).children().children().children().children().children().children().each(
-            function () {
-                if (this.name) {
-                    this.name = this.name.replace(
-                        /\[(\d+)\]/, function (str, p) {
-                            return '[' + (i + iterator) + ']';
-                        });
-                }
-
-                if ($(this).hasClass(serialNo)) {
-                    $(this).val(i + 1);
-                }
+        tableBody.children().eq(i).children().children().children().children().children().children().each(function () {
+            if (this.name) {
+                this.name = this.name.replace(/\[(\d+)\]/, function (str, p) {
+                    return '[' + (i + iterator) + ']';
+                });
             }
-        );
+
+            if ($(this).hasClass(serialNo)) {
+                $(this).val(i + 1);
+            }
+        });
     }
 }
 
 function formIndexing(tableBody, row, serialNo, iterator) {
-    if (!iterator)
-        iterator = 0;
+    if (!iterator) iterator = 0;
 
     for (let i = 0; i < row.length; i++) {
-        tableBody.children().eq(i).children().children().each(
-            function () {
-                if (this.name) {
-                    this.name = this.name.replace(
-                        /\[(\d+)\]/, function (str, p) {
-                            return '[' + (i + iterator) + ']';
-                        });
-                }
-
-                if ($(this).hasClass(serialNo)) {
-                    $(this).val(i + 1);
-                }
+        tableBody.children().eq(i).children().children().each(function () {
+            if (this.name) {
+                this.name = this.name.replace(/\[(\d+)\]/, function (str, p) {
+                    return '[' + (i + iterator) + ']';
+                });
             }
-        );
+
+            if ($(this).hasClass(serialNo)) {
+                $(this).val(i + 1);
+            }
+        });
     }
 }
 
@@ -253,21 +204,18 @@ function indexRowNo(tableId) {
 }
 
 function formatAsDate(date) {
-    if (date)
-        return $.datepicker.formatDate(globalConf.dateFormat(), new Date(date));
+    if (date) return $.datepicker.formatDate(globalConf.dateFormat(), new Date(date));
     "MM dd, yy";
     return '';
 }
 
 function formatAsDateDay(date) {
-    if (date)
-        return $.datepicker.formatDate(globalConf.dateFormatDay(), new Date(date));
+    if (date) return $.datepicker.formatDate(globalConf.dateFormatDay(), new Date(date));
     return '';
 }
 
 function formatAsDateMonth(date) {
-    if (date)
-        return $.datepicker.formatDate(globalConf.dateFormatMonth(), new Date(date));
+    if (date) return $.datepicker.formatDate(globalConf.dateFormatMonth(), new Date(date));
     return '';
 }
 
@@ -283,14 +231,7 @@ function populate(data) {
                 newData = data[i];
             }
             //let data=data[i].replace('\'', '\\\'');
-            $(
-                "input[type='text'][name='" + i + "']," +
-                "input[type='hidden'][name='" + i + "'], " +
-                "input[type='checkbox'][name='" + i + "'], " +
-                "input[type='email'][name='" + i + "'], " +
-                "input[type='number'][name='" + i + "'], " +
-                "select[name='" + i + "'], textarea[name='" + i + "']"
-            ).val(newData);
+            $("input[type='text'][name='" + i + "']," + "input[type='hidden'][name='" + i + "'], " + "input[type='checkbox'][name='" + i + "'], " + "input[type='email'][name='" + i + "'], " + "input[type='number'][name='" + i + "'], " + "select[name='" + i + "'], textarea[name='" + i + "']").val(newData);
 
             if (typeof data[i] !== "string") {
                 $("input[type='radio'][name='" + i + "'][value='" + newData + "']").prop('checked', true);
@@ -302,24 +243,19 @@ function populate(data) {
         }
     }
 
-    $('form').find('input[type="checkbox"]').each(
-        function () {
-            if ($(this).siblings('input[type="hidden"]').val() == "true" ||
-                $(this).siblings('input[type="hidden"]').val() == 1) {
-                $(this).prop('checked', true);
-            } else {
-                $(this).prop('checked', false);
-            }
+    $('form').find('input[type="checkbox"]').each(function () {
+        if ($(this).siblings('input[type="hidden"]').val() == "true" || $(this).siblings('input[type="hidden"]').val() == 1) {
+            $(this).prop('checked', true);
+        } else {
+            $(this).prop('checked', false);
         }
-    );
+    });
 }
 
 function allowKeys(e) {
     //Allow: backspace, delete, tab, escape, enter
-    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
-        //Allow: Ctr+A
-        (e.keyCode == 65 && e.ctrlKey === true) ||
-        //Allow: home, end, left, right, down, up
+    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 || //Allow: Ctr+A
+        (e.keyCode == 65 && e.ctrlKey === true) || //Allow: home, end, left, right, down, up
         (e.keyCode >= 35 && e.keyCode <= 40)) {
         return true;
     }
@@ -373,10 +309,7 @@ function parseAsDate(val) {
             year = dateMatch[7];
             year = parseInt(year);
             if (dateMatch[7].length < 3) {
-                if (year > 70)
-                    year = 1900 + year;
-                else
-                    year = 2000 + year;
+                if (year > 70) year = 1900 + year; else year = 2000 + year;
             }
         }
         date = new Date(year, month - 1, day);
@@ -409,10 +342,7 @@ globalLib = (function () {
 
     function ajax(url, type, data, callback) {
         $.ajax({
-            url: url,
-            type: type,
-            data: data,
-            success: callback
+            url: url, type: type, data: data, success: callback
         });
     }
 
@@ -461,120 +391,66 @@ globalLib = (function () {
             data = [];
         }
         if (data.length) {
-            element.append(
-                $(
-                    '<option/>', {
-                        value: "",
-                        text: "--"
-                    }
-                )
-            );
+            element.append($('<option/>', {
+                value: "", text: "--- Please Select ---"
+            }));
             if (type === 'char') {
-                $.each(
-                    data, function (index, itemData) {
-                        element.append(
-                            $(
-                                '<option/>', {
-                                    value: itemData.valueChar,
-                                    text: itemData.text
-                                }
-                            )
-                        );
-                    }
-                );
+                $.each(data, function (index, itemData) {
+                    element.append($('<option/>', {
+                        value: itemData.valueChar, text: itemData.text
+                    }));
+                });
             }
 
 
             if (type === 'string') {
-                $.each(
-                    data, function (index, itemData) {
-                        element.append(
-                            $(
-                                '<option/>', {
-                                    value: itemData.value,
-                                    text: itemData.text
-                                }
-                            )
-                        );
-                    }
-                );
+                $.each(data, function (index, itemData) {
+                    element.append($('<option/>', {
+                        value: itemData.value, text: itemData.text
+                    }));
+                });
             }
 
             if (type === 'integer') {
-                $.each(
-                    data, function (index, itemData) {
-                        if (itemData.text != null) {
-                            element.append(
-                                $(
-                                    '<option/>', {
-                                        value: itemData.valueInteger,
-                                        text: itemData.text
-                                    }
-                                )
-                            );
-                        }
+                $.each(data, function (index, itemData) {
+                    if (itemData.text != null) {
+                        element.append($('<option/>', {
+                            value: itemData.valueInteger, text: itemData.text
+                        }));
                     }
-                );
+                });
             }
             if (type === 'integer') {
-                $.each(
-                    data, function (index, itemData) {
-                        if (itemData.valueText != null) {
-                            element.append(
-                                $(
-                                    '<option/>', {
-                                        value: itemData.valueInteger,
-                                        text: itemData.valueText
-                                    }
-                                )
-                            );
-                        }
+                $.each(data, function (index, itemData) {
+                    if (itemData.valueText != null) {
+                        element.append($('<option/>', {
+                            value: itemData.valueInteger, text: itemData.valueText
+                        }));
                     }
-                );
+                });
             }
             if (type === 'bigInteger') {
-                $.each(
-                    data, function (index, itemData) {
-                        element.append(
-                            $(
-                                '<option/>', {
-                                    value: itemData.valueBigInteger,
-                                    text: itemData.text
-                                }
-                            )
-                        );
-                    }
-                );
+                $.each(data, function (index, itemData) {
+                    element.append($('<option/>', {
+                        value: itemData.valueBigInteger, text: itemData.text
+                    }));
+                });
             }
 
             if (type === 'short') {
-                $.each(
-                    data, function (index, itemData) {
-                        element.append(
-                            $(
-                                '<option/>', {
-                                    value: itemData.valueShort,
-                                    text: itemData.text
-                                }
-                            )
-                        );
-                    }
-                );
+                $.each(data, function (index, itemData) {
+                    element.append($('<option/>', {
+                        value: itemData.valueShort, text: itemData.text
+                    }));
+                });
             }
 
             if (type === 'valueInteger') {
-                $.each(
-                    data, function (index, itemData) {
-                        element.append(
-                            $(
-                                '<option/>', {
-                                    value: itemData.valueInteger,
-                                    text: itemData.valueText
-                                }
-                            )
-                        );
-                    }
-                );
+                $.each(data, function (index, itemData) {
+                    element.append($('<option/>', {
+                        value: itemData.valueInteger, text: itemData.valueText
+                    }));
+                });
             }
         }
     }
@@ -591,8 +467,7 @@ globalLib = (function () {
 
     function isFormValid(form) {
         form.validate({
-            errorElement: 'span',
-            errorPlacement: function (error, element) {
+            errorElement: 'span', errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             }, highlight: function (element) {
@@ -630,218 +505,208 @@ globalLib = (function () {
 //region *** Document Ready Method ***
 $(document).ready(function () {
 
-        //<editor-fold desc="to show datepicker in subtarget">
-        $('#subTargetTableId tbody').on('click', 'tr .showDatepicker', function () {
-            let row = $(this).closest('tr');
-            let selectedRow = row.addClass('selected');
-            selectedRow.find('.calendarDate').datepicker({
-                // dateFormat: 'MM dd, yy',
-                dateFormat: 'M dd',
-            });
-            selectedRow.find('.calendarDate').datepicker('show');
-            selectedRow.removeClass('selected');
+    //<editor-fold desc="to show datepicker in subtarget">
+    $('#subTargetTableId tbody').on('click', 'tr .showDatepicker', function () {
+        let row = $(this).closest('tr');
+        let selectedRow = row.addClass('selected');
+        selectedRow.find('.calendarDate').datepicker({
+            // dateFormat: 'MM dd, yy',
+            dateFormat: 'M dd',
         });
+        selectedRow.find('.calendarDate').datepicker('show');
+        selectedRow.removeClass('selected');
+    });
 
 //to show hide on clicking input field
-        $('#subTargetTableId tbody').on('click', 'tr .calendarDate', function () {
-            $(this).datepicker('hide');
-            $(this).removeClass('hasDatepicker');
-        });
-        //</editor-fold>
+    $('#subTargetTableId tbody').on('click', 'tr .calendarDate', function () {
+        $(this).datepicker('hide');
+        $(this).removeClass('hasDatepicker');
+    });
+    //</editor-fold>
 
 
-        //Local letiable for show errors on pop instead of tooltip
-        let body = $('body');
-        //<editor-fold desc="to show title on hover">
-        $('textarea, input').hover(function () {
-            $(this).attr('title', $(this).val());
-        });
+    //Local letiable for show errors on pop instead of tooltip
+    let body = $('body');
+    //<editor-fold desc="to show title on hover">
+    $('textarea, input').hover(function () {
+        $(this).attr('title', $(this).val());
+    });
 
-        $('table').on('mouseover', 'tbody tr', function (e) {
-            let currentCell = $(e.target).closest("td");
-            currentCell.find('textarea').attr('title', currentCell.find('textarea').val());
-            currentCell.find('input').attr('title', currentCell.find('input').val());
-        });
-        //</editor-fold>
-        //region *** Restriction Event ***
-        body.on('keypress', '.alphanumeric', function (e) {
-                if (allowKeys(e)) {
-                    return true;
-                }
-                let regex = new RegExp("^[a-zA-Z0-9]+$");
-                let str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-                if (regex.test(str)) {
-                    return true;
-                }
-
-                e.preventDefault();
-                return false;
-            }
-        );
-
-        /**
-         * to allow only numeric characters
-         * it allow to copy and paste number only characters only
-         */
-        body.on('keypress keyup blur', '.numeric', function (e) {
-                $(this).val($(this).val().replace(/[^\d].+/, ""));
-                if ((e.which < 48) || e.which > 57) {
-                    e.preventDefault();
-                }
-            }
-        );
-
-        /**
-         * to allow only decimal numbers
-         */
-        body.on('keypress keyup blur', '.decimal', function (e) {
-                $(this).val($(this).val().replace(/[0-9\.]/g, ''));
-                if ((e.which != 46 || $(this).val().indexOf('.') != -1) && (e.which < 48 || e.which > 57)) {
-                    e.preventDefault();
-                }
-            }
-        );
-
-        body.on('keypress', '.phone', function (e) {
-                let evt = (e) ? e : window.event;
-                let charCode = (evt.which) ? evt.which : evt.keyCode;
-                if (charCode != 43 && charCode > 31 && (charCode < 48 || charCode > 57)) {
-                    return false;
-                }
-                return true;
-            }
-        );
-
-
-        function isAmount(event, element) {
-            let charCode = (event.which) ? event.which : event.keyCode;
-            if ((charCode != 46 || $(element).val().indexOf('.') != -1) && charCode != 45 && charCode != 46 && !(charCode >= 48 && charCode <= 57)) {
-                return false;
-            }
-                //if (
-                //    (charCode != 46 || $(element).val().indexOf('.') != -1) &&
-                //    (charCode != 9) &&
-                //    (charCode < 48 || charCode > 57) &&
-                //    (charCode != 8))
-            //    return false;
-            else
-                return true;
+    $('table').on('mouseover', 'tbody tr', function (e) {
+        let currentCell = $(e.target).closest("td");
+        currentCell.find('textarea').attr('title', currentCell.find('textarea').val());
+        currentCell.find('input').attr('title', currentCell.find('input').val());
+    });
+    //</editor-fold>
+    //region *** Restriction Event ***
+    body.on('keypress', '.alphanumeric', function (e) {
+        if (allowKeys(e)) {
+            return true;
+        }
+        let regex = new RegExp("^[a-zA-Z0-9]+$");
+        let str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+        if (regex.test(str)) {
+            return true;
         }
 
-        body.on('keypress', '.amount', function (e) {
-                return isAmount(e, this);
-            }
-        );
+        e.preventDefault();
+        return false;
+    });
 
-        body.on('keydown', '.percentage', function (e) {
-                if (allowKeys(e)) {
-                    return;
-                }
+    /**
+     * to allow only numeric characters
+     * it allow to copy and paste number only characters only
+     */
+    body.on('keypress keyup blur', '.numeric', function (e) {
+        $(this).val($(this).val().replace(/[^\d].+/, ""));
+        if ((e.which < 48) || e.which > 57) {
+            e.preventDefault();
+        }
+    });
 
-                if ((e.which >= 96 && e.which <= 105) || (e.which >= 48 && e.which <= 57) || e.which === 190 ||
-                    e.which === 110) {
+    /**
+     * to allow only decimal numbers
+     */
+    body.on('keypress keyup blur', '.decimal', function (e) {
+        $(this).val($(this).val().replace(/[0-9\.]/g, ''));
+        if ((e.which != 46 || $(this).val().indexOf('.') != -1) && (e.which < 48 || e.which > 57)) {
+            e.preventDefault();
+        }
+    });
 
-                } else {
-                    e.preventDefault();
-                }
-            }
-        );
+    body.on('keypress', '.phone', function (e) {
+        let evt = (e) ? e : window.event;
+        let charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 43 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    });
 
-        body.on('blur', '.percentage', function (e) {
-                let $this = $(this);
-                if ($this.val()) {
-                    let value = $this.val();
 
-                    let regex = new RegExp("^[0-9]{1,3}(\\.([0-9]{1,2})?)?$");
-                    if (!regex.test(value)) {
-                        warningMsg('Incorrect Format. Format is ###.##');
-                        $this.val('');
-                        return;
-                    }
-                }
-                if (value > 100) {
-                    warningMsg('Please insert interest rate between zero(0) and hundred(100)');
-                    $this.val('');
-                    return;
-                }
-            }
-        );
-
-        let datePickerOptions = {
-            dateFormat: globalConf.dateFormat(),
-            changeMonth: true,
-            changeYear: true,
-            yearRange: 'c-65:c+10',
-            beforeShow: function (input, inst) {
-                if ($(input).prop("readonly")) {
-                    return false;
-                }
-            }
-        };
-
-        $(".datepicker").datepicker(datePickerOptions);
-
-        $('body').on('focus', '.datepicker', function () {
-            if ($(this).hasClass('dynamic')) {
-                $(this).datepicker(datePickerOptions);
-            }
-        });
-
-        body.on('keydown', 'input ,a , select', function (e) {
-            let key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
-            if (key == 13 || key == 9 & e.target.type != 'submit' & $(e.target).hasClass('datepicker')) {
-                let id = $(e.target).attr('id');
-                parseEntryAsDate(id);
-            }
-            if (key == 13 & e.target.type != 'submit') {
-                e.preventDefault();
-
-                if (e.target.tagName.toLocaleLowerCase() === 'a' || e.target.type === 'button') {
-                    $(this).click();
-                }
-
-                let manualNextIndex = $(this).attr("data-nextIndex");
-                if (manualNextIndex) {
-                    let $manualNext = $('[tabindex=' + manualNextIndex + ']');
-                    $manualNext.focus();
-                    return false;
-                }
-
-                let curIndex = this.tabIndex;
-                let i = +curIndex + 1;
-                let $next = null;
-                let allNext = $('[tabindex=' + i + ']:not(body):not([readonly]):not(:disabled)');
-                if (allNext.length) {
-                    $next = allNext[0];
-                }
-                if (!$next) {
-                    let nextPossibleTabIndex = 10000;
-                    allNext = $('[tabindex]:not(body):not([readonly]):not(:disabled)').filter(function (ix, el) {
-                        let tb = el.tabIndex;
-                        if (+tb > +curIndex) {
-                            nextPossibleTabIndex = nextPossibleTabIndex > +tb ? +tb : nextPossibleTabIndex;
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    });
-                    if (allNext.length) {
-                        $next = $('[tabindex=' + nextPossibleTabIndex + ']');
-                    }
-                }
-
-                if (!$next) {
-                    $next = $('[tabindex]:not(body):not([readonly]):not(:disabled)')[0];
-                }
-                if ($next.attr('type') == 'reset') {
-                    $('input[type="submit"]').focus();
-                } else {
-                    $($next).focus();
-                }
-            }
-        });
+    function isAmount(event, element) {
+        let charCode = (event.which) ? event.which : event.keyCode;
+        if ((charCode != 46 || $(element).val().indexOf('.') != -1) && charCode != 45 && charCode != 46 && !(charCode >= 48 && charCode <= 57)) {
+            return false;
+        }
+            //if (
+            //    (charCode != 46 || $(element).val().indexOf('.') != -1) &&
+            //    (charCode != 9) &&
+            //    (charCode < 48 || charCode > 57) &&
+            //    (charCode != 8))
+        //    return false;
+        else return true;
     }
-);
+
+    body.on('keypress', '.amount', function (e) {
+        return isAmount(e, this);
+    });
+
+    body.on('keydown', '.percentage', function (e) {
+        if (allowKeys(e)) {
+            return;
+        }
+
+        if ((e.which >= 96 && e.which <= 105) || (e.which >= 48 && e.which <= 57) || e.which === 190 || e.which === 110) {
+
+        } else {
+            e.preventDefault();
+        }
+    });
+
+    body.on('blur', '.percentage', function (e) {
+        let $this = $(this);
+        if ($this.val()) {
+            let value = $this.val();
+
+            let regex = new RegExp("^[0-9]{1,3}(\\.([0-9]{1,2})?)?$");
+            if (!regex.test(value)) {
+                warningMsg('Incorrect Format. Format is ###.##');
+                $this.val('');
+                return;
+            }
+        }
+        if (value > 100) {
+            warningMsg('Please insert interest rate between zero(0) and hundred(100)');
+            $this.val('');
+            return;
+        }
+    });
+
+    let datePickerOptions = {
+        dateFormat: globalConf.dateFormat(),
+        changeMonth: true,
+        changeYear: true,
+        yearRange: 'c-65:c+10',
+        beforeShow: function (input, inst) {
+            if ($(input).prop("readonly")) {
+                return false;
+            }
+        }
+    };
+
+    $(".datepicker").datepicker(datePickerOptions);
+
+    $('body').on('focus', '.datepicker', function () {
+        if ($(this).hasClass('dynamic')) {
+            $(this).datepicker(datePickerOptions);
+        }
+    });
+
+    body.on('keydown', 'input ,a , select', function (e) {
+        let key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+        if (key == 13 || key == 9 & e.target.type != 'submit' & $(e.target).hasClass('datepicker')) {
+            let id = $(e.target).attr('id');
+            parseEntryAsDate(id);
+        }
+        if (key == 13 & e.target.type != 'submit') {
+            e.preventDefault();
+
+            if (e.target.tagName.toLocaleLowerCase() === 'a' || e.target.type === 'button') {
+                $(this).click();
+            }
+
+            let manualNextIndex = $(this).attr("data-nextIndex");
+            if (manualNextIndex) {
+                let $manualNext = $('[tabindex=' + manualNextIndex + ']');
+                $manualNext.focus();
+                return false;
+            }
+
+            let curIndex = this.tabIndex;
+            let i = +curIndex + 1;
+            let $next = null;
+            let allNext = $('[tabindex=' + i + ']:not(body):not([readonly]):not(:disabled)');
+            if (allNext.length) {
+                $next = allNext[0];
+            }
+            if (!$next) {
+                let nextPossibleTabIndex = 10000;
+                allNext = $('[tabindex]:not(body):not([readonly]):not(:disabled)').filter(function (ix, el) {
+                    let tb = el.tabIndex;
+                    if (+tb > +curIndex) {
+                        nextPossibleTabIndex = nextPossibleTabIndex > +tb ? +tb : nextPossibleTabIndex;
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+                if (allNext.length) {
+                    $next = $('[tabindex=' + nextPossibleTabIndex + ']');
+                }
+            }
+
+            if (!$next) {
+                $next = $('[tabindex]:not(body):not([readonly]):not(:disabled)')[0];
+            }
+            if ($next.attr('type') == 'reset') {
+                $('input[type="submit"]').focus();
+            } else {
+                $($next).focus();
+            }
+        }
+    });
+});
 //endregion *** Document Ready Method ***
 
 //Resizing table column

@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--
   Created by IntelliJ IDEA.
@@ -10,9 +11,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<sec:authorize access="hasAuthority('2-EDIT')" var="hasEditRole"/>
-<sec:authorize access="hasAuthority('2-ADD')" var="hasAddRole"/>
-<sec:authorize access="hasAuthority('2-DELETE')" var="hasDeleteRole"/>
+<sec:authorize access="hasAuthority('1-EDIT')" var="hasEditRole"/>
+<sec:authorize access="hasAuthority('1-ADD')" var="hasAddRole"/>
+<sec:authorize access="hasAuthority('1-DELETE')" var="hasDeleteRole"/>
 <html>
 <head>
     <title>Users</title>
@@ -199,8 +200,13 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-warning square" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary square btnSaveUser"> Save</button>
-                <button type="button" class="btn btn-primary square hidden btnUpdateUser">Update</button>
+                <security:authorize access="hasAuthority('1-ADD')">
+                    <button type="button" class="btn btn-primary square btnSaveUser"> Save</button>
+                </security:authorize>
+
+                <security:authorize access="hasAuthority('1-EDIT')">
+                    <button type="button" class="btn btn-primary square hidden btnUpdateUser">Update</button>
+                </security:authorize>
             </div>
         </div>
     </div>

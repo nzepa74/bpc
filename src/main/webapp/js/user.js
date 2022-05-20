@@ -83,8 +83,8 @@ user = (function () {
         $('#userListTable').dataTable().fnDestroy();
         $('#userListTable tbody').empty();
         let hasEditRole = $('#hasEditRole').val();
-        // let btnEdit = '';//TODO: to be used this one after incorporation security
-        let btnEdit = '<button id="btnEdit" class="btn btn-s btn-info square btnEdit" data-bs-toggle="modal" data-bs-target="#userModal"><i class="fa fa-edit"></i> Edit</button>';
+        let btnEdit = '';//TODO: to be used this one after incorporation security
+        // let btnEdit = '<button id="btnEdit" class="btn btn-s btn-info square btnEdit" data-bs-toggle="modal" data-bs-target="#userModal"><i class="fa fa-edit"></i> Edit</button>';
         if (hasEditRole.toString() === 'true') {
             btnEdit = '<button id="btnEdit" class="btn btn-s btn-info square btnEdit" data-bs-toggle="modal" data-bs-target="#userModal"><i class="fa fa-edit"></i> Edit</button>';
         }

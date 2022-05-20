@@ -48,6 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/user").access("hasAuthority('1-VIEW')")
                 .antMatchers("/year").access("hasAuthority('2-VIEW')")
+                .antMatchers("/permission").access("hasAuthority('3-VIEW')")
                 .antMatchers("/assets/**", "/resources/**"
                         , "/forgotPassword/**"
                         , "/api/forgotPassword/**"

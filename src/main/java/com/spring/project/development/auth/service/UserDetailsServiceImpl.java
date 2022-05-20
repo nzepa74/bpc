@@ -29,9 +29,9 @@ import java.util.List;
 public class UserDetailsServiceImpl implements UserDetailsService {
     private final PermissionDao permissionDao;
     private final SaUserRepository saUserRepository;
-    @Autowired
-    @Qualifier("messageSource")
-    private MessageSource messageSource;
+//    @Autowired
+//    @Qualifier("messageSource")
+//    private MessageSource messageSource;
 
     public UserDetailsServiceImpl(PermissionDao permissionDao, SaUserRepository saUserRepository) {
         this.permissionDao = permissionDao;

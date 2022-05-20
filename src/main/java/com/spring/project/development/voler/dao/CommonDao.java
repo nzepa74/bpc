@@ -140,4 +140,14 @@ public class CommonDao extends BaseDao {
                 .setParameter("userId", userId)
                 .uniqueResult();
     }
+
+
+    @Transactional
+    public List<DropdownDTO> getDzongList() {
+        String sql = environment.getProperty("CommonDao.getDzongList");
+        List<DropdownDTO> dropdownDTOS = entityManager.createNativeQuery(sql)
+                .unwrap(SQLQuery.class).setResultTransformer(Transformers.aliasToBean(DropdownDTO.class)).getResultList();
+        return dropdownDTOS;
+    }
+
 }

@@ -661,6 +661,7 @@ public class MainController {
      */
     @RequestMapping("/employee")//this is url
      public String employeeMethod(Model model) {
+        model.addAttribute("dzongList", commonService.getDzongList());
         return "employee";//this is a name of jsp page
     }
 

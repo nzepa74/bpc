@@ -167,19 +167,38 @@ employee = (function () {
         });
     }
 
+    function onChangeDzongkhag() {
+        $('#dzongkhagId').on('change', function () {
+            let dzongkhagId = $(this).val();
+            $.ajax({
+                url: _baseURL() + 'getGeogListByDzoId',
+                type: 'GET',
+                data: {dzoId: dzongkhagId},
+                success: function (res) {
+                    globalLib.loadDropDown($('#geogId'), res, 'integer');
+                }
+            });
+        });
+    }
+
     return {
         addEmployee: addEmployee,
         getAllEmployees: getAllEmployees,
         btnEdit: btnEdit,
         toggle: toggle,
-        editEmployee: editEmployee
+        editEmployee: editEmployee,
+        onChangeDzongkhag: onChangeDzongkhag
     }
 })();
 
 $(document).ready(function () {
+    $('#employeeModal').on('shown.bs.modal', function () {
+        $('.chosen-select', this).chosen('destroy').chosen();
+    });
     employee.addEmployee();
     employee.getAllEmployees();
     employee.btnEdit();
     employee.toggle();
     employee.editEmployee();
+    employee.onChangeDzongkhag();
 });
