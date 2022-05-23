@@ -7,14 +7,14 @@ import java.io.File;
 
 @Component
 public class SchedulerJob {
-        @Scheduled(cron = "0 28 15 * * ?")//run every 24 hours, for production
-//    @Scheduled(cron = "0 0/1 * * * ?")//run every one minute, for testing purpose only
+//        @Scheduled(cron = "0 28 15 * * ?")//run every 24 hours, for production
+    @Scheduled(cron = "0 0/1 * * * ?")//run every one minute, for testing purpose only
     public void performSchedulerJob() {
         deleteJunkJasperReports();
 //        sendSchedulerMail();
     }
     private void deleteJunkJasperReports() {
-        String filepath = "D:\\projects\\bpc\\compact\\src\\main\\reports";
+        String filepath = "D:\\projects\\bpc\\compact\\src\\main\\webapp\\reports";
         File file = new File(filepath);
         DeleteDirectory.deleteJunkJasperReports(file);
     }
